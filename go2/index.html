@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unitree Go2: the intelligent, accessible quadruped robot with 4D LiDAR and ISS 2.0.">
+<meta name="theme-color" content="#000">
+<title>Go2 - AI Robots</title>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/vendor/gsap.min.js"></script>
+<script defer src="js/vendor/ScrollTrigger.min.js"></script>
+<script defer src="js/vendor/ScrollSmoother.min.js"></script>
+<script defer src="js/main.js"></script>
+</head>
+<body>
+<header><a href="https://ai-robots.apps.mdxpreview.xyz/" class="brand-link home-link" aria-label="Click to go home"><img src="assets/logos/ai_robots_logo.svg" alt="Ai Robots Brand" width="211" height="26"></a><div class="menus"><button aria-label="Click to open mobile menu" id="hamburger"><span></span><span></span><span></span></button><button aria-label="Click to search" type="button"><img src="assets/icons/magnifier.svg" alt="Search" width="20" height="20"/></button><span></span><a href="https://ai-robots.apps.mdxpreview.xyz/access/signin" aria-label="Click to check account"><img src="assets/icons/user.svg" alt="User Account" width="17" height="20"></a><button aria-label="Click to open the cart" class="cart-trigger" type="button"><img src="assets/icons/bag.svg" alt="Cart" width="21" height="21"/></button></div></header><nav><a href="https://ai-robots.apps.mdxpreview.xyz/" class="nav-link home-link"><img src="assets/icons/home.png" alt="">home</a><span class="nav-link" role="button" tabindex="0">humanoid</span><span class="nav-link" role="button" tabindex="0">quadruped</span><span class="nav-link" role="button" tabindex="0">digital human</span><a href="https://ai-robots.apps.mdxpreview.xyz/industries" class="nav-link">industry</a><div class="sub-nav" data-link="humanoid"><div class="group"><span>humanoid robot</span><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-h2"><img src="assets/images/menu/desktop/humanoid/h2.png" alt="">h2</a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-r1"><img src="assets/images/menu/desktop/humanoid/r1.png" alt="">r1</a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-g1"><img src="assets/images/menu/desktop/humanoid/g1.png" alt="">g1</a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-h1-h2"><img src="assets/images/menu/desktop/humanoid/h1_h2.png" alt="">h1/h2</a></div></div><div class="sub-nav" data-link="quadruped"><div class="group"><span>Wheeled Legged Robot Dog</span><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-go2-w"><img src="assets/images/menu/desktop/quadruped/go2_w.png" alt="">Go2- W</a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-b2-w"><img src="assets/images/menu/desktop/quadruped/b2_w.png" alt="">B2- W</a></div><div class="group"><span>Legged Robot Dog</span><a href="./"><img src="assets/images/menu/desktop/quadruped/go2.png" alt="">Go2</a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-b2"><img src="assets/images/menu/desktop/quadruped/b2.png" alt="">B2</a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-a2"><img src="assets/images/menu/desktop/quadruped/a2.png" alt="">A2</a></div><div class="group"><span>Manipulators</span><a href="https://ai-robots.apps.mdxpreview.xyz/z1-d1"><img src="assets/images/menu/desktop/quadruped/z1_d1.png" alt="">z1 / d1</a></div><div class="group"><span>Perception</span><a href="https://ai-robots.apps.mdxpreview.xyz/l2-4d-lidar"><img src="assets/images/menu/desktop/quadruped/4d.png" alt="">4D LIDAR L2</a></div><a href="https://ai-robots.apps.mdxpreview.xyz/quadruped" class="own-link">About quadruped<img src="assets/icons/arrow_right.svg" alt="" width="22" height="17"></a></div><div class="sub-nav" data-link="digital human"><div class="group"><span>Digital Human</span><a href="https://ai-robots.apps.mdxpreview.xyz/holographic-cabinet"><img src="assets/images/menu/desktop/digital/holo.png" alt="">Holographic Cabinet KIEFER</a><a href="https://ai-robots.apps.mdxpreview.xyz/oled-mobile-robot"><img src="assets/images/menu/desktop/digital/holo.png" alt="">OLED Mobile Robot KIEFER</a></div></div></nav> <aside id="menu"> <div class="menu-wrapper"> <div class="accordion accordion-1 hidden accordion-group">   </div><div class="accordion accordion-1 hidden accordion-group"> <button class="btn"> humanoid <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="accordion child"> <div class="hidden accordion-2 accordion-group"> <button class="btn"> humanoid robot <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="products child"> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-h2"> <img src="assets/images/menu/h2.png" alt=""> <span>h2</span> </a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-r1"> <img src="assets/images/menu/r1.png" alt=""> <span>r1</span> </a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-g1"> <img src="assets/images/menu/g1.png" alt=""> <span>g1</span> </a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-h1-h2"> <img src="assets/images/menu/h2.png" alt=""> <span>h1/h2</span> </a> </div> </div> </div> </div><div class="accordion accordion-1 hidden accordion-group"> <button class="btn"> quadruped <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="accordion child"> <div class="hidden accordion-2 accordion-group"> <button class="btn"> Wheeled Legged Robot Dog <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="products child"> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-go2-w"> <img src="assets/images/menu/go2_w.png" alt=""> <span>Go2- W</span> </a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-b2-w"> <img src="assets/images/menu/b2_w.png" alt=""> <span>B2- W</span> </a> </div> </div><div class="hidden accordion-2 accordion-group"> <button class="btn"> Legged Robot Dog <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="products child"> <a href="./"> <img src="assets/images/menu/go2.png" alt=""> <span>Go2</span> </a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-b2"> <img src="assets/images/menu/b2.png" alt=""> <span>B2</span> </a><a href="https://ai-robots.apps.mdxpreview.xyz/unitree-a2"> <img src="assets/images/menu/a2.png" alt=""> <span>A2</span> </a> </div> </div><div class="hidden accordion-2 accordion-group"> <button class="btn"> Manipulators <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="products child"> <a href="https://ai-robots.apps.mdxpreview.xyz/z1-d1"> <img src="assets/images/menu/z1_d1.png" alt=""> <span>z1 / d1</span> </a> </div> </div><div class="hidden accordion-2 accordion-group"> <button class="btn"> Perception <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="products child"> <a href="https://ai-robots.apps.mdxpreview.xyz/l2-4d-lidar"> <img src="assets/images/menu/4d.png" alt=""> <span>4D LIDAR L2</span> </a> </div> </div> </div> </div><div class="accordion accordion-1 hidden accordion-group"> <button class="btn"> digital human <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="accordion child"> <div class="hidden accordion-2 accordion-group"> <button class="btn"> Digital Human <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24"> </button> <div class="products child"> <a href="https://ai-robots.apps.mdxpreview.xyz/holographic-cabinet"> <img src="assets/images/menu/digital.png" alt=""> <span>Holographic Cabinet KIEFER</span> </a><a href="https://ai-robots.apps.mdxpreview.xyz/oled-mobile-robot"> <img src="assets/images/menu/digital.png" alt=""> <span>OLED Mobile Robot KIEFER</span> </a> </div> </div> </div> </div><div class="accordion accordion-1 hidden accordion-group"> <a href="https://ai-robots.apps.mdxpreview.xyz/industries" class="btn"> industry </a>  </div> </div> </aside>
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<main>
+  <section id="hero-section">
+    <div class="media-container">
+      <div class="hero-shot">
+        <video id="hero-video" class="media" playsinline muted loop autoplay preload="metadata" poster="assets/img/poster.avif">
+          <source src="assets/videos/go2/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="content">
+      <h1 class="h1 intro-anim">Unitree Go2</h1>
+      <p class="subtitle-3 intro-anim">Transformative Newborn</p>
+    </div>
+    <div class="sub-content">
+      <p class="h1 intro-anim">The World’s Most Intelligent and <br> Accessible Quadruped Robot</p>
+      <span class="paragraph-1 intro-anim">
+        Experience the future of companion robotics with the Go2, featuring the
+        standard ultra-wide 4D LiDAR and the revolutionary Intelligent
+        Side-follow System (ISS 2.0).
+      </span>
+    </div>
+  </section>
+
+  <section id="new-section" class="sequence-section">
+    <div class="sequence-pin">
+      <div class="content">
+        <div class="line-element"><div></div><span>Humanoid Robot</span><div></div></div>
+        <h2 class="h1 text-center">Brand New Intelligent Species</h2>
+        <p>Transformative Newborn</p>
+      </div>
+      <div class="sequence-canvas" data-frames="801" data-path="assets/sequence/">
+        <canvas id="sequence-canvas"></canvas>
+        <div class="specs">
+          <div class="spec">
+            <div class="wrapper-seq-elem overflow-hidden"><span class="h1">20 km/h</span></div>
+            <div class="wrapper-seq-elem overflow-hidden"><p class="subtitle-3">Max Speed</p></div>
+          </div>
+          <div class="spec">
+            <div class="wrapper-seq-elem overflow-hidden"><span class="h1">IP67 Ingress Protection</span></div>
+            <div class="wrapper-seq-elem overflow-hidden"><p class="subtitle-3">Protection</p></div>
+          </div>
+          <div class="spec">
+            <div class="wrapper-seq-elem overflow-hidden"><span class="h1">50 km with 40kg load</span></div>
+            <div class="wrapper-seq-elem overflow-hidden"><p class="subtitle-3">Max Endurance</p></div>
+          </div>
+          <div class="spec">
+            <div class="wrapper-seq-elem overflow-hidden"><span class="h1">Continuous Stair Climbing (20-25cm)</span></div>
+            <div class="wrapper-seq-elem overflow-hidden"><p class="subtitle-3">Mobility</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="simple-section bck-black no-padding-top-mobile" id="first-simple">
+    <h2 class="h1">3D LiDAR Mapping</h2>
+    <p class="paragraph-1">
+      With L1 LiDAR and a dedicated App, you can construct point cloud map within a certain area,
+      and specify a path for Go2 to move autonomously.
+    </p>
+    <div class="media-wrapper">
+      <img src="assets/img/poster_2.png" alt="Go2 LiDAR point-cloud mapping app" width="920" height="422" class="iframe-poster">
+      <div class="media">
+        <iframe src="https://player.vimeo.com/video/1168639430?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;controls=0&amp;background=1" frameborder="0" width="1920" height="886" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="3D LiDAR Mapping" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="simple-section">
+    <h2 class="h1">Intelligent Side-follow <br> System 2.0 (ISS 2.0)</h2>
+    <p class="paragraph-1">
+      The ISS 2.0 uses new wireless vector positioning and control technology to improve positioning
+      accuracy by 50%. The robot can track and follow its user over a distance of 30m, navigating
+      complex terrain with an optimized obstacle avoidance strategy. This makes the Go2 a truly
+      hands-free, intelligent companion.
+    </p>
+    <div class="media-wrapper">
+      <img src="assets/img/poster_3.png" alt="Go2 following its owner through a park" width="640" height="358" class="iframe-poster" loading="lazy">
+      <div class="media">
+        <iframe src="https://player.vimeo.com/video/1168639453?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;controls=0&amp;background=1" frameborder="0" width="1200" height="674" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Intelligent Side-follow System" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="simple-section shadow-type-desktop shadow-type-tablet shadow-type-mobile">
+    <h2 class="h1">Enhanced Power <br class="br-tablet"> and <br class="br-desktop br-mobile"> Endurance</h2>
+    <p class="paragraph-1">
+      The Go2 boasts a 30% enhancement in motor performance with a peak joint torque of 45 N.m.
+      The battery capacity has also been upgraded by 150% to 8,000mAh (Standard) or an optional
+      15,000mAh ultra-long life battery, providing up to 2-4 hours of endurance and improving motor
+      efficiency and stability.
+    </p>
+    <div class="media-wrapper">
+      <img src="assets/img/go2.png" alt="Go2 standing on a rock" width="1426" height="1256" loading="lazy">
+    </div>
+  </section>
+
+  <section class="simple-section last-go2">
+    <h2 class="h1">Open Platform for <br> Learning and Fun</h2>
+    <p class="paragraph-1">
+      The Go2 is an ideal platform for learning and development. It supports Graphical Programming
+      for easy, drag-and-drop program design, making robotics accessible to beginners. It also
+      supports Secondary Development and features OTA Upgrades to continuously improve the user
+      experience and intelligence over time.
+    </p>
+    <div class="media-wrapper">
+      <img src="assets/img/open_platform.png" alt="Go2 app showing an OTA upgrade" width="1220" height="638" loading="lazy">
+    </div>
+  </section>
+
+  <section id="tech-section">
+    <div class="table">
+      <div class="head">
+        <div class="line-element big-desktop"><div></div><span>Go2</span><div></div></div>
+        <h2 class="h1">Technical Specifications</h2>
+      </div>
+      <table class="robot-spec-table">
+        <thead>
+          <tr><th>Characteristic</th><th>Value</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Model Variants</td><td>AIR, PRO, EDU</td><td>Offering different levels of speed and computing power.</td></tr>
+          <tr><td>Weight (with battery)</td><td>15kg</td><td>Highly portable and lightweight.</td></tr>
+          <tr><td>Payload (Max EDU)</td><td>8kg (MAX ~ 12kg)</td><td>Suitable for carrying sensors and custom payloads.</td></tr>
+          <tr><td>Speed (Max EDU)</td><td>03.7m/s (MAX 5m/s)</td><td>High-speed dynamic motion.</td></tr>
+          <tr><td>Endurance (Standard)</td><td>About 2-4h (8000mAh)</td><td>Long endurance battery (15000mAh) optional.</td></tr>
+          <tr><td>Max Joint Torque</td><td>45 N.m</td><td>Enhanced power for dynamic actions.</td></tr>
+          <tr><td>Max Climb Drop Height</td><td>About 16cm (EDU)</td><td>Superior obstacle crossing capability</td></tr>
+          <tr><td>Basic Computing Power</td><td>8-core High-performance CPU</td><td>Orin NX optional for EDU model</td></tr>
+          <tr><td>Sensing</td><td>4D LiDAR L1, HD Wide-angle Camera</td><td>Standard on all models.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <h2 class="h2">Enhance Your Go2 <br class="br-mobile br-tablet"> Capabilities</h2>
+    <div class="cards">
+      <div class="card no-shot with-border" data-handle="z1">
+        <strong class="shade"></strong><strong class="shade"></strong>
+        <span>z1</span>
+        <p>Double your Go2's operational time for extended adventures or research.</p>
+        <div class="buttons">
+          <div class="accessory-atc-wrap">
+            <button class="primary-btn" type="button">Add to cart<div class="icon"><img src="assets/icons/arrow_right.svg" alt="" width="22" height="17"></div></button>
+          </div>
+          <a href="https://ai-robots.apps.mdxpreview.xyz/products/z1" class="secondary-btn">Learn more</a>
+        </div>
+      </div>
+      <div class="card no-shot with-border" data-handle="battery">
+        <strong class="shade"></strong><strong class="shade"></strong>
+        <span>Battery</span>
+        <p>Boost the computing core for high-speed AI processing and complex model deployment (EDU model).</p>
+        <div class="buttons">
+          <div class="accessory-atc-wrap">
+            <button class="primary-btn" type="button">Add to cart<div class="icon"><img src="assets/icons/arrow_right.svg" alt="" width="22" height="17"></div></button>
+          </div>
+          <a href="https://ai-robots.apps.mdxpreview.xyz/products/battery" class="secondary-btn">Learn more</a>
+        </div>
+      </div>
+      <div class="card no-shot with-border" data-handle="sdk">
+        <strong class="shade"></strong><strong class="shade"></strong>
+        <span>SDK</span>
+        <p>Integrate a lightweight arm for basic manipulation and interaction tasks.</p>
+        <div class="buttons">
+          <div class="accessory-atc-wrap sold-out">
+            <button class="primary-btn" type="button" disabled>Sold out<div class="icon"><img src="assets/icons/arrow_right.svg" alt="" width="22" height="17"></div></button>
+          </div>
+          <a href="https://ai-robots.apps.mdxpreview.xyz/products/sdk" class="secondary-btn">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book-section">
+    <div class="book-wrapper">
+      <div class="first">
+        <strong class="shade"></strong><strong class="shade"></strong>
+        <h4 class="title">Ready to Start Your Robotics Journey?</h4>
+        <p class="paragraph-1">
+          The Unitree Go2-W is available exclusively through AIROBOTS in Greece. Contact us to
+          explore its full potential for your research or commercial needs.
+        </p>
+        <div class="buttons">
+          <a class="primary-btn" href="https://ai-robots.apps.mdxpreview.xyz/products/go2-quadruped">Request a quote<div class="icon"><img src="assets/icons/arrow_right.svg" alt="" width="22" height="17"></div></a>
+          <a class="secondary-btn" href="https://ai-robots.apps.mdxpreview.xyz/contact">Contact Sales Team</a>
+        </div>
+      </div>
+      <div class="second">
+        <img src="assets/img/book_bck.png" alt="" width="897" height="922" class="book-bck" loading="lazy">
+        <img src="assets/img/new_go2.png" alt="" width="1280" height="1280" class="book-shot" loading="lazy">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer> <div class="links"> <button>Quadruped Robots
+<img src="assets/icons/chevron-down.svg" alt="" loading="lazy" width="24" height="24"> </button> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-go2-w">Go2-W</a> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-b2-w">B2-W</a> <a href="./">Go2</a> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-b2">B2</a> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-a2">A2</a> </div> <div class="links"> <button>Humanoid Robots
+<img src="assets/icons/chevron-down.svg" alt="" loading="lazy" width="24" height="24"> </button> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-g1">Unitree G1</a> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-r1">Unitree R1</a> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-h2">Unitree H2</a> <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-h1-h2">Unitree H1/H2</a> </div> <div class="links"> <button>Accessories & Add-ons
+<img src="assets/icons/chevron-down.svg" alt="" loading="lazy" width="24" height="24"> </button> <a href="https://ai-robots.apps.mdxpreview.xyz/l2-4d-lidar">4D LiDAR Systems</a> <a href="https://ai-robots.apps.mdxpreview.xyz/l2-4d-lidar">Dexterous Hands (for G1)</a> <a href="https://ai-robots.apps.mdxpreview.xyz/accessories/batteries">Batteries & Chargers</a> <a href="https://ai-robots.apps.mdxpreview.xyz/accessories/development"> Development Kits & SDKs </a> </div> <div class="links"> <button>Solutions
+<img src="assets/icons/chevron-down.svg" alt="" loading="lazy" width="24" height="24"> </button> <a href="https://ai-robots.apps.mdxpreview.xyz/industries/manufacturing">Industrial Inspection</a> <a href="https://ai-robots.apps.mdxpreview.xyz/industries/education-research">Education & Research</a> <a href="https://ai-robots.apps.mdxpreview.xyz/industries/construction">Construction</a> <a href="https://ai-robots.apps.mdxpreview.xyz/industries/agriculture"> Agriculture </a> <a href="https://ai-robots.apps.mdxpreview.xyz/industries/personal-entertainment">
+Personal & Entertainment
+</a> </div> <div class="links"> <button>Contact us
+<img src="assets/icons/chevron-down.svg" alt="" loading="lazy" width="24" height="24"> </button> <a href="https://ai-robots.apps.mdxpreview.xyz/contact">Contact Sales</a> <a href="https://ai-robots.apps.mdxpreview.xyz/request-demo">Request Demo</a> <a href="https://ai-robots.apps.mdxpreview.xyz/tech-support">Technical Support</a> <a href="https://ai-robots.apps.mdxpreview.xyz/locations"> Location & Hours </a> </div> <div class="links"> <button>About Us
+<img src="assets/icons/chevron-down.svg" alt="" loading="lazy" width="24" height="24"> </button> <a href="https://ai-robots.apps.mdxpreview.xyz/story">Our Story</a>  <a href="https://ai-robots.apps.mdxpreview.xyz/unitree-partnership">Unitree Partnership</a>  </div> <div class="links"> <button>Resources Overview
+<img src="assets/icons/chevron-down.svg" alt="" loading="lazy" width="24" height="24"> </button>  <a href="https://ai-robots.apps.mdxpreview.xyz/blog"> news </a> </div> <div class="links"> <button>Legal
+<img src="assets/icons/chevron-down.svg" alt="" loading="lazy" width="24" height="24"> </button> <a href="https://ai-robots.apps.mdxpreview.xyz/legal/returns-refunds">Returns & Refunds Policy </a> <a href="https://ai-robots.apps.mdxpreview.xyz/legal/terms-conditions">Terms & Conditions</a> <a href="https://ai-robots.apps.mdxpreview.xyz/legal/privacy">Privacy Policy</a> <a href="https://ai-robots.apps.mdxpreview.xyz/legal/cookie-policy"> Cookie Policy </a> <a href="https://ai-robots.apps.mdxpreview.xyz/legal/seller-liability"> Seller Liability </a> </div> <a target="_blank" rel="noopener" class="bottom-link" href="https://www.linkedin.com/company/ai-robots-gr/" target="_blank">
+linkedin
+<img class="icon" src="assets/icons/arrow_right.svg" alt="" loading="lazy" width="22" height="17"> </a> <a target="_blank" rel="noopener" class="bottom-link desc-link" href="https://www.youtube.com/@PhysicalAILab" target="_blank" rel="noopener">
+youtube
+<img class="icon" src="assets/icons/arrow_right.svg" alt="" loading="lazy" width="22" height="17"> </a> <a target="_blank" rel="noopener" class="bottom-link" href="https://www.instagram.com/airobots.ai/" target="_blank">
+instagram
+<img class="icon" src="assets/icons/arrow_right.svg" alt="" loading="lazy" width="22" height="17"> </a> <a class="bottom-link brand" href="https://ai-robots.apps.mdxpreview.xyz/"> <img src="assets/logos/ai_robots_logo.svg" alt="Ai Robots Brand" loading="lazy" width="211" height="26"> </a> <span class="last-elem-footer"> © All rights reserved 2026. </span> <span class="last-elem-footer"> © All rights reserved 2026. </span> <span class="last-elem-footer"> Greece </span> <a href="https://ai-robots.apps.mdxpreview.xyz/contact" class="last-elem-footer">Customer Service</a> </footer>
+</div>
+</div>
+</body>
+</html>

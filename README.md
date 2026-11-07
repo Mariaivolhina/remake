@@ -1,19 +1,22 @@
-# Crawler lawn mower: product page
+# AI Robots product pages
 
-A static, dependency-free product page for the remote-controlled crawler lawn mower, built on the layout of `https://ai-robots.apps.mdxpreview.xyz/unitree-go2`
-(originally an Astro site). It runs from any static file server.
+Two independent static sites, each self-contained in its own folder:
 
+| Folder | Site |
+| --- | --- |
+| `go2/` | Unitree Go2 product page (remake of ai-robots.apps.mdxpreview.xyz/unitree-go2) |
+| `mower/` | Remote-controlled crawler lawn mower product page |
+
+`index.html` at the root is a small landing page linking to both.
+
+## Run locally
 ```
-python3 -m http.server 8000   # then open http://localhost:8000
+python3 -m http.server 8000
 ```
+Then open http://localhost:8000/ (landing), `/go2/` or `/mower/`.
 
-## Layout
-- `index.html`: the page markup (header, desktop nav and dropdowns, mobile menu, all sections, footer)
-- `css/styles.css`: only the rules from the original stylesheets that apply to this page, cleaned of Astro scoping
-- `js/main.js`: the interactions: smooth scroll, intro, a pinned photo that zooms as you scroll while key specs cycle, section reveals, nav dropdowns, mobile menu, footer accordions
-- `js/vendor/`: GSAP 3.13 (gsap, ScrollTrigger, ScrollSmoother), bundled locally (GSAP standard no-charge licence)
-- `assets/mower/`: product photos cropped from the supplied images; `assets/` also holds the icons, logo, favicons and nav images
+## Deploy on Vercel
+- **One project** (Root Directory `./`): the sites are served at `/go2/` and `/mower/`.
+- **Two projects** (one per site): import this repo twice and set Root Directory to `go2` for one and `mower` for the other. Each gets its own URL.
 
-## Differences from the original
-- The search, account and cart buttons are not wired up.
-- Links to the site's other pages point at the original domain.
+No build step: Framework Preset "Other", no build command, no output directory.
