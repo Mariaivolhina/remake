@@ -1,5 +1,5 @@
 /*
- * Go2 product page — interactions.
+ * Crawler lawn mower page — interactions.
  * Requires GSAP 3.13 + ScrollTrigger + ScrollSmoother (loaded with `defer` before this file).
  */
 (() => {
@@ -22,11 +22,6 @@
   });
 
   /* ---------- Hero ---------- */
-  function heroVideo() {
-    const v = document.getElementById('hero-video');
-    if (v) v.play().catch(() => {});
-  }
-
   function introAnimation() {
     mm.add(CONDITIONS, ({ conditions }) => {
       const items = gsap.utils.toArray('.intro-anim');
@@ -38,81 +33,39 @@
     });
   }
 
-  /* ---------- Scroll-scrubbed image sequence ---------- */
-  function sequenceFrames() {
+  /* ---------- Pinned showcase: photo zooms out while the specs cycle ---------- */
+  function showcase() {
     const section = document.querySelector('.sequence-section');
     if (!section) return;
     const q = gsap.utils.selector(section);
     const content = q('.content')[0];
-    const contentChildren = q('.content > *');
-    const pin = q('.sequence-pin')[0];
     const holder = q('.sequence-canvas')[0];
-    const canvas = q('#sequence-canvas')[0];
-    const ctx = canvas.getContext('2d');
-    const count = Number(holder.dataset.frames);
-    const path = holder.dataset.path;
-    const frames = new Array(count).fill(null);
-    const state = { frame: 0 };
-    let portrait = false;
-
-    const draw = () => {
-      // Use the requested frame, or the nearest loaded one before it.
-      let i = state.frame;
-      while (i > 0 && !frames[i]) i--;
-      const img = frames[i];
-      if (!img) return;
-      const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
-      const w = img.width * scale, h = img.height * scale;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h);
-    };
-
-    const resize = (keep = false) => {
-      if (keep) return; // on phones, ignore address-bar resizes
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      draw();
-    };
-
-    // Load even frames first so the whole range is scrubbable quickly, then fill in odd ones.
-    const load = (i) => {
-      const img = new Image();
-      img.decoding = 'async';
-      img.onload = () => { frames[i] = img; if (i === state.frame || i === 0) draw(); };
-      img.src = `${path}${String(i).padStart(4, '0')}.avif`;
-    };
-    for (let i = 0; i < count; i += 2) load(i);
-    for (let i = 1; i < count; i += 2) load(i);
+    const photo = q('.showcase-img')[0];
 
     gsap.timeline({ scrollTrigger: { trigger: section, start: 'top bottom', end: 'top top', scrub: true } })
       .fromTo(holder, { yPercent: window.innerHeight > window.innerWidth ? -5 : -35 }, { yPercent: 0, duration: 2 })
       .from(holder, { opacity: 0, duration: 1.5, ease: 'power1.in' }, '<')
-      .from(contentChildren, { opacity: 0, y: '5vw', stagger: 0.25, duration: 0.75 }, 1)
+      .from(q('.content > *'), { opacity: 0, y: '5vw', stagger: 0.25, duration: 0.75 }, 1)
       .fromTo(content, { y: '20vw' }, { y: '0vw', ease: 'power1.out', duration: 1.5 }, '<')
       .to(content, { autoAlpha: 0, ease: 'power1.in', duration: 0.25 }, '-=0.25');
 
-    ScrollTrigger.create({ trigger: section, start: 'top top', end: 'bottom top', pin, pinSpacing: false });
+    ScrollTrigger.create({ trigger: section, start: 'top top', end: 'bottom top', pin: q('.sequence-pin')[0], pinSpacing: false });
 
     mm.add(CONDITIONS, ({ conditions }) => {
-      portrait = conditions.isPortraitRes;
       const spec = (n) => `.spec:nth-of-type(${n})`;
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section, start: 'top bottom',
-          end: portrait ? 'bottom center' : 'bottom top+=35%', scrub: true,
+          end: conditions.isPortraitRes ? 'bottom center' : 'bottom top+=35%', scrub: true,
         },
         defaults: { duration: 1 },
-      }).fromTo(state, { frame: 0 }, { frame: count - 1, snap: 'frame', ease: 'none', onUpdate: draw });
-
+      }).fromTo(photo, { scale: 1.3 }, { scale: 1, ease: 'none' });
       [1, 2, 3, 4].forEach((n, idx) => {
         tl.from(gsap.utils.toArray(`${spec(n)} > .wrapper-seq-elem > *`), { yPercent: 100, duration: 0.1 }, idx === 0 ? 0.15 : '>')
           .to(spec(n), { autoAlpha: 0, ease: 'power1.in', duration: 0.1 }, '>');
       });
       gsap.set('.wrapper-seq-elem', { opacity: 1 });
     });
-
-    resize();
-    window.addEventListener('resize', () => resize(portrait));
   }
 
   /* ---------- Section reveals (landscape only) ---------- */
@@ -151,18 +104,6 @@
         .from('.cards-section .card', { y: '7.5vw', duration: 1, stagger: 0.25 })
         .from('.cards-section .card', { opacity: 0, ease: 'power1.in', duration: 1, stagger: 0.25 }, '<');
     });
-
-    // No store backend in this remake: give visual feedback only.
-    document.querySelectorAll('.accessory-atc-wrap:not(.sold-out) .primary-btn').forEach((btn) => {
-      const label = btn.firstChild;
-      btn.addEventListener('click', () => {
-        const wrap = btn.parentElement;
-        if (wrap.classList.contains('added')) return;
-        wrap.classList.add('added');
-        label.textContent = 'Added';
-        setTimeout(() => { wrap.classList.remove('added'); label.textContent = 'Add to cart'; }, 1600);
-      });
-    });
   }
 
   function bookSection() {
@@ -173,7 +114,6 @@
         scrollTrigger: { trigger: `${b} .first`, start: 'top bottom+=5%', endTrigger: b, end: 'bottom bottom-=20%', scrub: 0.5 },
       })
         .from(`${b} .second`, { rotateY: -45, duration: 2, ease: 'linear' }, 0)
-        .from(`${b} .second .book-shot`, { yPercent: 50, duration: 2 }, 0)
         .from(`${b} .first h4`, { opacity: 0, x: '-1vw' }, 1)
         .from(`${b} .first p`, { opacity: 0, x: '-1vw' }, '<50%')
         .from(`${b} .first .primary-btn`, { opacity: 0, x: '-1vw' }, '<50%')
@@ -257,14 +197,9 @@
     });
   }
 
-  function markActiveLinks() {
-    document.querySelectorAll('nav .sub-nav a[href="./"], #menu a[href="./"]').forEach((a) => a.classList.add('active'));
-  }
-
   /* ---------- Boot ---------- */
-  heroVideo();
   introAnimation();
-  sequenceFrames();
+  showcase();
   simpleSections();
   techTable();
   cards();
@@ -272,7 +207,6 @@
   footer();
   desktopNav();
   mobileMenu();
-  markActiveLinks();
 
   window.addEventListener('load', () => ScrollTrigger.refresh());
 })();

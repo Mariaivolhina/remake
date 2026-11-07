@@ -541,3 +541,44 @@ header .menus button#hamburger.open span:last-of-type { transform: rotate(-45deg
 a { color: inherit; text-decoration: none; }
 .accessory-atc-wrap.added .primary-btn { background-color: #d1d1d1; }
 header, nav { --desktopOpacity: 1; }
+
+/* ---- Crawler mower content ---- */
+/* Pinned showcase (replaces the frame sequence): one photo, zoomed by scroll */
+.sequence-canvas.showcase { overflow: hidden; }
+.sequence-canvas .showcase-img { position: absolute; inset: 0; width: 100%; height: 100vh; object-fit: cover; object-position: center 60%; transform-origin: center 60%; }
+.sequence-canvas.showcase::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, #000 0%, #0009 30%, #0006 60%, #000d 100%); }
+.sequence-canvas.showcase .specs { z-index: 2; }
+
+/* Portrait photo (remote) and white-background diagram */
+.simple-section .media-wrapper.media-portrait { width: calc(var(--fs) * 30); height: calc(var(--fs) * 53.33); }
+.simple-section .media-wrapper.media-diagram { width: calc(var(--fs) * 60); height: calc(var(--fs) * 46.7); background: #fff; }
+.simple-section .media-wrapper.media-diagram img { object-fit: contain; }
+
+/* Component cards: four across, with a photo and a bullet list */
+.components-section .cards { grid-template-columns: repeat(4, 1fr); }
+.components-section .cards .card { justify-content: flex-start; padding: calc(var(--fs) * 2.5) 0 !important; position: relative; overflow: hidden; }
+.components-section .cards .card > * { width: 82%; }
+.components-section .card .component-img { width: auto; height: calc(var(--fs) * 8); max-width: 82%; object-fit: contain; border-radius: calc(var(--fs) * .5); margin-bottom: calc(var(--fs) * 1.5); }
+.components-section .card ul { margin-top: calc(var(--fs)); padding-left: 1.1em; text-align: left; color: var(--Gray-Paragraph, #cbcbcb); font-size: calc(var(--fs) * 1.012); line-height: 1.4; display: grid; gap: calc(var(--fs) * .5); }
+.components-section .card ul li::marker { color: var(--MAIN-BLUE); }
+
+/* Two-column parameter table + footnote */
+.table .robot-spec-table.two-col th, .table .robot-spec-table.two-col td { width: 50%; min-width: 50%; }
+.table .spec-note { margin-top: calc(var(--fs) * 1.5); color: #8a8a8a; font-size: calc(var(--fs) * 1); text-align: center; }
+
+/* Book section: full-bleed photo instead of a cut-out render */
+.book-section .book-wrapper .second .book-photo { object-position: 40% center; }
+
+@media (orientation: portrait) {
+  .simple-section .media-wrapper.media-portrait { width: 70% !important; height: auto; aspect-ratio: 9 / 16; justify-self: center; grid-row: auto; margin-top: calc(var(--fs) * 2); }
+  .simple-section .media-wrapper.media-portrait::after { display: none; }
+  .simple-section .media-wrapper.media-diagram { width: 100% !important; height: auto; aspect-ratio: 700 / 545; grid-row: auto; margin-top: calc(var(--fs) * 2); }
+  .simple-section .media-wrapper.media-diagram::after { display: none; }
+  .components-section .cards .card { width: calc(var(--fs) * 21.75); }
+  .components-section .card .component-img { height: calc(var(--fs) * 6); }
+  .components-section .card ul { font-size: calc(var(--fs) * .875); }
+  .table .spec-note { font-size: calc(var(--fs) * .8); padding: 0 calc(var(--hor-padding)); }
+  .book-section .book-wrapper .second { min-height: calc(var(--fs) * 60); }
+}
+/* Units must keep their case (mm, m²) */
+.sequence-canvas .specs .h1 { text-transform: none; }
